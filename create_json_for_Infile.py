@@ -15,7 +15,7 @@ json_file = 'school3.json'
 
 def read_CSV(path,input_file, json_file):
     rows = []
-    f=[]
+    l=[]
     with open(path+input_file) as csvfile:
         reader = csv.reader(csvfile,delimiter='|')
         #print(csvfile)
@@ -28,7 +28,7 @@ def read_CSV(path,input_file, json_file):
     for j in range(0,len(m)):
        z=zip(h,m[j])
        d=dict(z)
-       f.append(d)
+       l.append(d)
     convert_write_json(f, path+s[0]+".json")
 def convert_write_json(data, json_file):
     with open(json_file, "w") as f:
